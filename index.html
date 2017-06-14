@@ -1,2 +1,9 @@
 <p>Distance: <input id="distance"> AU
 <p>Period: <input id="period"> years
+<script>
+  var distance = document.querySelector('#distance');
+  var period = document.querySelector('#period');
+  distance.onkeyup = function() {
+    period.value = 'hello';
+  };
+</script>
