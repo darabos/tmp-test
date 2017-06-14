@@ -1,9 +1,14 @@
+<h1>Orbital computer</h1>
 <p>Distance: <input id="distance"> AU
 <p>Period: <input id="period"> years
 <script>
   var distance = document.querySelector('#distance');
   var period = document.querySelector('#period');
+  function round(x) { return Math.round(x * 10) / 10; }
   distance.onkeyup = function() {
-    period.value = 'hello';
+    period.value = round(Math.sqrt(distance.value * distance.value * distance.value));
+  };
+  period.onkeyup = function() {
+    distance.value = round(Math.pow(period.value * period.value, 1/3));
   };
 </script>
